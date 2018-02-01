@@ -249,7 +249,15 @@ NOTE: `find_by_*`メソッドと`find_by_*!`メソッドは、属性ごとに自
 
 モデルに新しくコールバックを登録すると、コールバックは実行キューに入ります。このキューには、あらゆるモデルに対する検証、登録済みコールバック、実行待ちのデータベース操作が置かれます。
 
+<!--
+TODO: https://github.com/yasslab/railsguides.jp/commit/da266672565fc5d8c4ecde348ea61dfb524dd9fc#r26928639
+-->
+
 コールバックの連鎖の全体は、1つのトランザクションに含まれます。_before_ コールバックの1つが`false`を返すか例外を発生するという動作をする場合、実行の連鎖全体が停止してロールバックが発行されます。_after_ コールバックの場合は例外を発生することによってのみ、コールバック連鎖の停止とトランザクションのロールバックを実行させることができます。
+
+<!--
+TODO: https://github.com/yasslab/railsguides.jp/commit/da266672565fc5d8c4ecde348ea61dfb524dd9fc#r26928643
+-->
 
 WARNING: `ActiveRecord::Rollback`以外の例外は、その例外によってコールバック連鎖が停止した後で、Railsによって再び発生させられます。このため、ActiveRecord::Rollback以外の例外を発生させると、saveやupdate_attributesのようなメソッド (つまり通常trueかfalseを返そうとするメソッド) が、例外を起こすことを想定していないコードを破壊する恐れがあります。
 
