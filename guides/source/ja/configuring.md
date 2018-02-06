@@ -269,6 +269,10 @@ config.middleware.delete "Rack::MethodOverride"
 
 * `config.active_record.schema_migrations_table_name`は、スキーママイグレーションテーブルの名前として使用する文字列を指定します。
 
+<!--
+TODO: https://github.com/nanophate/railsguides.jp/pull/4/commits/4709a5d17ceef58c5eefb167b39df421435c2aa3#r166179056
+-->
+
 * `config.active_record.pluralize_table_names`は、Railsが探すデータベースのテーブル名を単数形にするか複数形にするかを指定します。trueに設定すると、Customerクラスが使用するテーブル名は複数形の`customers`になります(デフォルト)。falseに設定すると、Customerクラスが使用するテーブル名は単数形の`customer`になります。
 
 * `config.active_record.default_timezone`は、データベースから日付・時刻を取り出した際のタイムゾーンを`Time.local` (`:local`を指定した場合)と`Time.utc` (`:utc`を指定した場合)のどちらにするかを指定します。デフォルトは`:utc`です。
