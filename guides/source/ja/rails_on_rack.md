@@ -249,6 +249,14 @@ Action Controllerの機能の多くはミドルウェアとして実装されて
 
 * ユニークなidを生成して`X-Request-Id`ヘッダーに設定します。`ActionDispatch::Request#uuid`メソッドも同一のidを利用しています。
 
+**`ActionDispatch::RemoteIp`**
+
+* IPスプーフィング攻撃をチェックします。
+
+<!--
+TODO: https://github.com/yasslab/railsguides.jp/commit/191714ea977bb6c5c6f19fb2f4da93be616df2b3#r27174670
+-->
+
 **`Rails::Rack::Logger`**
 
 * リクエストの処理を開始したことを、ログに書き出します。リクエストが完了すると、すべてのログをフラッシュします。
@@ -260,10 +268,6 @@ Action Controllerの機能の多くはミドルウェアとして実装されて
 **`ActionDispatch::DebugExceptions`**
 
 * 例外をログに残し、ローカルからのリクエストの場合は、デバッグ用のページを表示します。
-
-**`ActionDispatch::RemoteIp`**
-
-* IPスプーフィング攻撃をチェックします。
 
 **`ActionDispatch::Reloader`**
 
